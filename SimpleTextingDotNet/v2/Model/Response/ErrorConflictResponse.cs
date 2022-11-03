@@ -22,18 +22,38 @@
 // SOFTWARE.
 // </copyright>
 
-namespace SimpleTextingDotNet.v2.Model.Request
+using SimpleTextingDotNet.v2.Model.Object;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SimpleTextingDotNet.v2.Model.Response
 {
-    public class MediaUpload
+    /// <summary>
+    /// The api response for an error.
+    /// </summary>
+    public class ErrorConflictResponse
     {
         /// <summary>
-        /// Gets or sets the base64 encoded data.
+        /// The error code
         /// </summary>
-        public string File { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
-        /// Gets or sets the URL you will upload your media to.
+        /// The error details
         /// </summary>
-        public string Link { get; set; }
+        public string Details { get; set; }
+
+        /// <summary>
+        /// The error message
+        /// </summary>
+        public string Message { get; set; }
+
+        /// <summary>
+        /// The timestamp of the error.
+        /// </summary>
+        public DateTime? Timestamp { get; set; }
     }
 }

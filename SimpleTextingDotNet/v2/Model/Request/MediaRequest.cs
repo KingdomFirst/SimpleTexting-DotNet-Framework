@@ -22,27 +22,25 @@
 // SOFTWARE.
 // </copyright>
 
-using System;
-using Newtonsoft.Json.Converters;
+using System.ComponentModel;
+using Newtonsoft.Json;
 
-namespace SimpleTextingDotNet
+namespace SimpleTextingDotNet.v2.Model.Request
 {
-    public class Utilities
+    public class MediaRequest
     {
-        public static DateTime UnixTimeStampToDateTime( double unixTimeStamp )
-        {
-            // Unix timestamp is seconds past epoch
-            DateTime dateTime = new DateTime( 1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc );
-            dateTime = dateTime.AddSeconds( unixTimeStamp ).ToLocalTime();
-            return dateTime;
-        }
+        /// <summary>
+        /// Gets or sets the base64 encoded data.
+        /// </summary>
+        [JsonProperty( PropertyName = "file" )]
+        [DefaultValue( "" )]
+        public string File { get; set; }
 
-        public class DateFormatConverter : IsoDateTimeConverter
-        {
-            public DateFormatConverter( string format )
-            {
-                DateTimeFormat = format;
-            }
-        }
+        /// <summary>
+        /// Gets or sets the URL you will upload your media to.
+        /// </summary>
+        [JsonProperty( PropertyName = "link" )]
+        [DefaultValue( "" )]
+        public string Link { get; set; }
     }
 }

@@ -24,10 +24,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static SimpleTextingDotNet.Enum;
+using System.ComponentModel;
+using Newtonsoft.Json;
+using static SimpleTextingDotNet.Utilities;
 
 namespace SimpleTextingDotNet.v2.Model.Request
 {
@@ -39,26 +38,37 @@ namespace SimpleTextingDotNet.v2.Model.Request
         /// <summary>
         /// Gets or sets the Contact Phone.
         /// </summary>
+        [JsonProperty( PropertyName = "contactPhone" )]
+        [DefaultValue( "" )]
         public string ContactPhone { get; set; }
 
         /// <summary>
         /// Gets or sets the First Name.
         /// </summary>
+        [JsonProperty( PropertyName = "firstName" )]
+        [DefaultValue( "" )]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or sets the Last Name.
         /// </summary>
+        [JsonProperty( PropertyName = "lastName" )]
+        [DefaultValue( "" )]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or sets the Email
         /// </summary>
+        [JsonProperty( PropertyName = "email" )]
+        [DefaultValue( "" )]
         public string Email { get; set; }
 
         /// <summary>
         /// Contact's birthday in format (yyyy-mm-dd)
         /// </summary>
+        [JsonProperty( PropertyName = "birthday" )]
+        [DefaultValue( "" )]
+        [JsonConverter( typeof( DateFormatConverter ), "yyyy-MM-dd" )]
         public DateTime? Birthday { get; set; }
 
         /// <summary>
@@ -69,6 +79,8 @@ namespace SimpleTextingDotNet.v2.Model.Request
         /// <summary>
         /// Notes about the contact
         /// </summary>
+        [JsonProperty( PropertyName = "comment" )]
+        [DefaultValue( "" )]
         public string Comment { get; set; }
 
         /// <summary>

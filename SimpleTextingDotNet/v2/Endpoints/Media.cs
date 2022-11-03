@@ -26,10 +26,6 @@ using SimpleTextingDotNet.v2.Model.Object;
 using SimpleTextingDotNet.v2.Model.Request;
 using SimpleTextingDotNet.v2.Model.Response;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using static SimpleTextingDotNet.Enum;
 
 namespace SimpleTextingDotNet.v2
 {
@@ -45,7 +41,7 @@ namespace SimpleTextingDotNet.v2
         {
             var request = new RestRequest( $"mediaitems/upload?shared={shared}", Method.POST );
 
-            var reqBody = new MediaUpload
+            var reqBody = new MediaRequest
             {
                 File = file
             };
@@ -64,7 +60,7 @@ namespace SimpleTextingDotNet.v2
         {
             var request = new RestRequest( $"mediaitems/loadByLink?shared={shared}", Method.POST );
 
-            var reqBody = new MediaUpload
+            var reqBody = new MediaRequest
             {
                 Link = link
             };

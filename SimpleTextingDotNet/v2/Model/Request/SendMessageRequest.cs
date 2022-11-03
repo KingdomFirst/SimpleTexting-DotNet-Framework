@@ -22,30 +22,61 @@
 // SOFTWARE.
 // </copyright>
 
-using SimpleTextingDotNet.v2.Model.Object;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 using static SimpleTextingDotNet.Enum;
 
 namespace SimpleTextingDotNet.v2.Model.Request
 {
     public class SendMessageRequest
     {
+        /// <summary>
+        /// The Contact's phone number
+        /// </summary>
+        [JsonProperty( PropertyName = "contactPhone" )]
+        [DefaultValue( "" )]
         public string ContactPhone { get; set; }
 
+        /// <summary>
+        /// The account phone, if not set it will use the first phone
+        /// </summary>
+        [JsonProperty( PropertyName = "accountPhone" )]
+        [DefaultValue( "" )]
         public string AccountPhone { get; set; }
 
-        public Mode Mode { get; set; }
+        /// <summary>
+        /// The message mode
+        /// </summary>
+        [JsonProperty( PropertyName = "mode" )]
+        [DefaultValue( "AUTO" )]
+        public string Mode { get; set; }
 
+        /// <summary>
+        /// The message subject for mms
+        /// </summary>
+        [JsonProperty( PropertyName = "subject" )]
+        [DefaultValue( "" )]
         public string Subject { get; set; }
 
+        /// <summary>
+        /// The text message
+        /// </summary>
+        [JsonProperty( PropertyName = "text" )]
+        [DefaultValue( "" )]
         public string Text { get; set; }
 
+        /// <summary>
+        /// The fallback text for mms messages that do not go through
+        /// </summary>
+        [JsonProperty( PropertyName = "fallbackText" )]
+        [DefaultValue( "" )]
         public string FallbackText { get; set; }
 
+        /// <summary>
+        /// A list of Media Id's or Url's to send with the mms message
+        /// </summary>
+        [JsonProperty( PropertyName = "mediaItems" )]
         public List<string> MediaItems { get; set; }
     }
 }

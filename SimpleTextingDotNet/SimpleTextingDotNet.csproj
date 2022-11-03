@@ -62,11 +62,12 @@
     <Compile Include="v2\Model\Object\MediaItem.cs" />
     <Compile Include="v2\Model\Object\Contact.cs" />
     <Compile Include="v2\Model\Request\ContactRequest.cs" />
-    <Compile Include="v2\Model\Request\MediaUpload.cs" />
+    <Compile Include="v2\Model\Request\MediaRequest.cs" />
     <Compile Include="v2\Model\Object\ErrorData.cs" />
     <Compile Include="v2\Model\Object\Message.cs" />
     <Compile Include="v2\Model\Request\MessageRequest.cs" />
     <Compile Include="v2\Model\Request\SendMessageRequest.cs" />
+    <Compile Include="v2\Model\Response\ErrorConflictResponse.cs" />
     <Compile Include="v2\Model\Response\ErrorResponse.cs" />
     <Compile Include="v2\Model\Response\ContactsResponse.cs" />
     <Compile Include="v2\Model\Response\MediaItemsResponse.cs" />

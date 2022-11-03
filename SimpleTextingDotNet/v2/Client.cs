@@ -82,17 +82,39 @@ namespace SimpleTextingDotNet.v2
             }
             else if ( response.Content.Contains( "errorCode" ) )
             {
-                var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>( response.Content );
-                var message = string.Format( "Error Code \"{0}\". {1}", errorResponse.Code, errorResponse.Message );
+                var message = "";
+                try
+                {
+                    var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>( response.Content );
+                    message = string.Format( "Error Code \"{0}\". {1}", errorResponse.Code, errorResponse.Message );
+                } catch
+                {
+                    var errorResponse = JsonConvert.DeserializeObject<ErrorConflictResponse>( response.Content );
+                    message = string.Format( "Error Code \"{0}\". {1}\nDetails: {2}", errorResponse.Code, errorResponse.Message, errorResponse.Details );
+                }
                 var exception = new ApplicationException( message, response.ErrorException );
                 throw exception;
+            }
+            else if ( response.StatusCode == HttpStatusCode.Conflict )
+            {
+                var errorResponse = JsonConvert.DeserializeObject<ErrorConflictResponse>( response.Content );
+                var message = string.Format( "Error Code \"{0}\". {1}\nDetails: {2}", errorResponse.Code, errorResponse.Message, errorResponse.Details );
+                var exception = new ApplicationException( message, response.ErrorException );
+                throw exception;
+
             }
             return response.Data;
         }
 
         public RestRequest AddRequestJsonBody( RestRequest request, object bodyObject )
         {
-            var jsonBody = JsonConvert.SerializeObject( bodyObject, Formatting.Indented );
+            var jsonSettings = new JsonSerializerSettings()
+            {
+                Formatting = Formatting.Indented,
+                NullValueHandling = NullValueHandling.Ignore,
+                DefaultValueHandling = DefaultValueHandling.Ignore
+            };
+            var jsonBody = JsonConvert.SerializeObject( bodyObject, jsonSettings );
             request.AddParameter( "application/json", jsonBody, ParameterType.RequestBody );
             return request;
         }

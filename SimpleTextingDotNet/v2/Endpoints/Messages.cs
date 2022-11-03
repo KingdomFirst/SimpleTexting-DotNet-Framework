@@ -54,7 +54,7 @@ namespace SimpleTextingDotNet.v2
             {
                 ContactPhone = contactPhone,
                 Text = text,
-                Mode = mode,
+                Mode = mode.ToString(),
                 AccountPhone = accountPhone,
                 Subject = subject,
                 FallbackText = fallbackText,
@@ -81,7 +81,7 @@ namespace SimpleTextingDotNet.v2
             var reqBody = new SendMessageRequest
             {
                 Text = text,
-                Mode = mode,
+                Mode = mode.ToString(),
                 Subject = subject,
                 FallbackText = fallbackText,
                 MediaItems = mediaItems
