@@ -1,4 +1,4 @@
-# Postal .NET Framework
+# Simple Texting .NET Framework
 ### A C# SDK for SimpleTexting.com
 
 # Available on Nuget
