@@ -91,5 +91,22 @@ namespace SimpleTextingDotNet
             CONFIRMATION,
             INCOMING_MESSAGE
         }
+
+        /// <summary>
+        /// Trigger a webhook on specific platform events.
+        /// INCOMING_MESSAGE: Trigger a webhook event based on an incoming message
+        /// OUTGOING_MESSAGE: Trigger a webhook event based on an outgoing message
+        /// DELIVERY_REPORT: Trigger a webhook when a delivery confirmation is received from a contact
+        /// NON_DELIVERED_REPORT: Trigger a webhook when a failed delivery is reported from a contact
+        /// UNSUBSCRIBE_REPORT: Trigger a webhook when a contact unsubscribes
+        /// </summary>
+        public enum Trigger
+        {
+            INCOMING_MESSAGE,
+            OUTGOING_MESSAGE,
+            DELIVERY_REPORT,
+            NON_DELIVERED_REPORT,
+            UNSUBSCRIBE_REPORT
+        }
     }
 }

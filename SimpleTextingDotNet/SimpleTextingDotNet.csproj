@@ -55,10 +55,12 @@
     <Compile Include="Utilities.cs" />
     <Compile Include="v2\Client.cs" />
     <Compile Include="v2\Endpoints\Contacts.cs" />
+    <Compile Include="v2\Endpoints\Webhooks.cs" />
     <Compile Include="v2\Endpoints\Media.cs" />
     <Compile Include="v2\Endpoints\Messages.cs" />
     <Compile Include="v2\Model\Object\ContactListSimple.cs" />
     <Compile Include="v2\Model\Object\ContactList.cs" />
+    <Compile Include="v2\Model\Object\Webhook.cs" />
     <Compile Include="v2\Model\Object\MediaItem.cs" />
     <Compile Include="v2\Model\Object\Contact.cs" />
     <Compile Include="v2\Model\Request\ContactRequest.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="v2\Model\Response\ErrorConflictResponse.cs" />
     <Compile Include="v2\Model\Response\ErrorResponse.cs" />
     <Compile Include="v2\Model\Response\ContactsResponse.cs" />
+    <Compile Include="v2\Model\Response\WebhooksResponse.cs" />
     <Compile Include="v2\Model\Response\MediaItemsResponse.cs" />
     <Compile Include="v2\Model\Response\ContactResponse.cs" />
     <Compile Include="v2\Model\Response\MessagesResponse.cs" />
