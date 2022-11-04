@@ -41,7 +41,7 @@ namespace SimpleTextingDotNet.v2
         /// <param name="accountPhone">Optional: requests will come exclusively for the specified account phone number</param>
         /// <param name="contactPhone">Optional: requests will come exclusively for the specified contact's phone number</param>
         /// <returns>MediaItem</returns>
-        public ContactResponse CreateWebhook( string url, List<Trigger> triggers, int requestsPerSecLimit = 25, string accountPhone = null, string contactPhone = null )
+        public BaseResponse CreateWebhook( string url, List<Trigger> triggers, int requestsPerSecLimit = 25, string accountPhone = null, string contactPhone = null )
         {
             var request = new RestRequest( $"webhooks", Method.POST );
 
@@ -55,7 +55,7 @@ namespace SimpleTextingDotNet.v2
             };
 
             AddRequestJsonBody( request, reqBody );
-            return Execute<ContactResponse>( request );
+            return Execute<BaseResponse>( request );
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace SimpleTextingDotNet.v2
         /// <param name="accountPhone">Optional: requests will come exclusively for the specified account phone number</param>
         /// <param name="contactPhone">Optional: requests will come exclusively for the specified contact's phone number</param>
         /// <returns>MediaItem</returns>
-        public ContactResponse UpdateWebhook( string webhookid, string url, List<Trigger> triggers, int requestsPerSecLimit = 25, string accountPhone = null, string contactPhone = null )
+        public BaseResponse UpdateWebhook( string webhookid, string url, List<Trigger> triggers, int requestsPerSecLimit = 25, string accountPhone = null, string contactPhone = null )
         {
             var request = new RestRequest( $"webhooks/{webhookid}", Method.PUT );
 
@@ -81,7 +81,7 @@ namespace SimpleTextingDotNet.v2
             };
 
             AddRequestJsonBody( request, reqBody );
-            return Execute<ContactResponse>( request );
+            return Execute<BaseResponse>( request );
         }
 
         /// <summary>

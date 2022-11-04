@@ -27,7 +27,7 @@ namespace SimpleTextingDotNet.v2.Model.Response
     /// <summary>
     /// The api response after creating or updating a contact.
     /// </summary>
-    public class ContactResponse
+    public class BaseResponse
     {
         /// <summary>
         /// Gets or sets the ID of item in hexadecimal format.

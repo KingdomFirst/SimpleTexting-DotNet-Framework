@@ -47,7 +47,7 @@ namespace SimpleTextingDotNet.v2
         /// <param name="upsert">If a contact already exists with the phone number in your request body, the contact will be updated with the information in the request when upsert is set to true.</param>
         /// <param name="listsReplacement">If listsReplacement is set to true, a contact will be removed from their existing list. If set to false, a contact will be added to a new list and stay in their original list.</param>
         /// <returns>ContactResponse</returns>
-        public ContactResponse CreateContact( string contactPhone, string firstName = null, string lastName = null, string email = null, DateTime? birthday = null, string comment = null, List<string> lists = null, dynamic customFields = null, bool upsert = true, bool listsReplacement = true )
+        public BaseResponse CreateContact( string contactPhone, string firstName = null, string lastName = null, string email = null, DateTime? birthday = null, string comment = null, List<string> lists = null, dynamic customFields = null, bool upsert = true, bool listsReplacement = true )
         {
             var request = new RestRequest( $"contacts?upsert={upsert}&listsReplacement={listsReplacement}", Method.POST );
 
@@ -64,7 +64,7 @@ namespace SimpleTextingDotNet.v2
             };
 
             AddRequestJsonBody( request, reqBody );
-            return Execute<ContactResponse>( request );
+            return Execute<BaseResponse>( request );
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace SimpleTextingDotNet.v2
         /// <param name="upsert">If a contact already exists with the phone number in your request body, the contact will be updated with the information in the request when upsert is set to true.</param>
         /// <param name="listsReplacement">If listsReplacement is set to true, a contact will be removed from their existing list. If set to false, a contact will be added to a new list and stay in their original list.</param>
         /// <returns>ContactResponse</returns>
-        public ContactResponse UpdateContact( string idOrNumber, string contactPhone, string firstName = null, string lastName = null, string email = null, DateTime? birthday = null, string comment = null, List<string> lists = null, dynamic customFields = null, bool upsert = true, bool listsReplacement = true )
+        public BaseResponse UpdateContact( string idOrNumber, string contactPhone, string firstName = null, string lastName = null, string email = null, DateTime? birthday = null, string comment = null, List<string> lists = null, dynamic customFields = null, bool upsert = true, bool listsReplacement = true )
         {
             var request = new RestRequest( $"contacts/{idOrNumber}?upsert={upsert}&listsReplacement={listsReplacement}", Method.PUT );
 
@@ -99,7 +99,7 @@ namespace SimpleTextingDotNet.v2
             };
 
             AddRequestJsonBody( request, reqBody );
-            return Execute<ContactResponse>( request );
+            return Execute<BaseResponse>( request );
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace SimpleTextingDotNet.v2
             var request = new RestRequest( $"contacts/{idOrNumber}" );
             request.Method = Method.DELETE;
 
-            var response = Execute<ContactResponse>( request );
+            var response = Execute<BaseResponse>( request );
 
             return response != null;
         }

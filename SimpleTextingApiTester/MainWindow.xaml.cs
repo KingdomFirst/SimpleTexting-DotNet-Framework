@@ -213,9 +213,9 @@ namespace SimpleTextingApiTester
                     hasData = true;
                 }
             }
-            else if ( responseType == typeof( ContactResponse ) )
+            else if ( responseType == typeof( BaseResponse ) )
             {
-                var contactResponse = ( ContactResponse ) response;
+                var contactResponse = ( BaseResponse ) response;
                 if ( contactResponse != null )
                 {
                     tbResponse.Text = JsonConvert.SerializeObject( contactResponse, Formatting.Indented );

@@ -74,7 +74,7 @@
     <Compile Include="v2\Model\Response\ContactsResponse.cs" />
     <Compile Include="v2\Model\Response\WebhooksResponse.cs" />
     <Compile Include="v2\Model\Response\MediaItemsResponse.cs" />
-    <Compile Include="v2\Model\Response\ContactResponse.cs" />
+    <Compile Include="v2\Model\Response\BaseResponse.cs" />
     <Compile Include="v2\Model\Response\MessagesResponse.cs" />
     <Compile Include="v2\Model\Response\EvaluateResponse.cs" />
     <Compile Include="v2\Model\Response\SendResponse.cs" />
