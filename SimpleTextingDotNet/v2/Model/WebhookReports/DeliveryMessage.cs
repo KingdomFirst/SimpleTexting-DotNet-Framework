@@ -22,66 +22,43 @@
 // SOFTWARE.
 // </copyright>
 
-using System;
+using static SimpleTextingDotNet.Enum;
 
-namespace SimpleTextingDotNet.v2.Model.Webhook
+namespace SimpleTextingDotNet.v2.Model.WebhookReports
 {
     /// <summary>
-    /// The webhook event data.
+    /// The message data.
     /// </summary>
-    public class EventData
+    public class DeliveryMessage
     {
-        private double? _timestamp;
-        private DateTime? _timestampDateTime;
+        /// <summary>
+        /// Gets or sets the message identifier in hexadecimal format.
+        /// </summary>
+        public string MessageId { get; set; }
 
         /// <summary>
-        /// Gets or sets the Event.
+        /// Gets or sets the Message Category.
         /// </summary>
-        public string Event { get; set; }
+        public Category Category { get; set; }
 
         /// <summary>
-        /// The timestamp of the event.
+        /// Gets or sets the Reference type (available only for MT (Mobile-Terminating) messages).
         /// </summary>
-        public double? Timestamp
-        {
-            get
-            {
-                return _timestamp;
-            }
-            set
-            {
-                _timestamp = value;
-                _timestampDateTime = Utilities.UnixTimeStampToDateTime( _timestamp.Value );
-            }
-        }
+        public string ReferenceType { get; set; }
 
         /// <summary>
-        /// The timestamp of the event converted to DateTime.
+        /// Gets or sets the Account Phone
         /// </summary>
-        public DateTime? TimestampDateTime
-        {
-            get
-            {
-                if ( _timestampDateTime == null && Timestamp != null )
-                {
-                    _timestampDateTime = Utilities.UnixTimeStampToDateTime( Timestamp.Value );
-                }
-                return _timestampDateTime;
-            }
-            set
-            {
-                _timestampDateTime = value;
-            }
-        }
+        public string AccountPhone { get; set; }
 
         /// <summary>
-        /// Gets or sets the payload.
+        /// Gets or sets the Contact Phone.
         /// </summary>
-        public EventPayload Payload { get; set; }
+        public string ContactPhone { get; set; }
 
         /// <summary>
-        /// Gets or sets the uuid.
+        /// Name of carrier
         /// </summary>
-        public Guid Uuid { get; set; }
+        public string Carrier { get; set; }
     }
 }

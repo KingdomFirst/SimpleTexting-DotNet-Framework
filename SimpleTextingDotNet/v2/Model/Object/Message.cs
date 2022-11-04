@@ -24,9 +24,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static SimpleTextingDotNet.Enum;
 
 namespace SimpleTextingDotNet.v2.Model.Object
@@ -36,10 +33,21 @@ namespace SimpleTextingDotNet.v2.Model.Object
     /// </summary>
     public class Message
     {
+        private string _id;
+
         /// <summary>
         /// Gets or sets the identifier in hexadecimal format.
         /// </summary>
-        public string Id { get; set; }
+        public string Id { 
+            get { return _id; } set { _id = value; } 
+        }
+
+        /// <summary>
+        /// Gets or sets the message identifier in hexadecimal format.
+        /// </summary>
+        public string MessageId { 
+            get { return _id; } set { _id = value; } 
+        }
 
         /// <summary>
         /// Gets or sets the subject.

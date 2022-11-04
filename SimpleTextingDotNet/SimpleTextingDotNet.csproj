@@ -78,9 +78,11 @@
     <Compile Include="v2\Model\Response\MessagesResponse.cs" />
     <Compile Include="v2\Model\Response\EvaluateResponse.cs" />
     <Compile Include="v2\Model\Response\SendResponse.cs" />
-    <Compile Include="v2\Model\Webhook\EventPayload.cs" />
-    <Compile Include="v2\Model\Webhook\EventData.cs" />
-    <Compile Include="v2\Model\Webhook\Message.cs" />
+    <Compile Include="v2\Model\WebhookReports\UnsubscribeContact.cs" />
+    <Compile Include="v2\Model\WebhookReports\DeliveryMessage.cs" />
+    <Compile Include="v2\Model\WebhookReports\MessageReport.cs" />
+    <Compile Include="v2\Model\WebhookReports\DeliveryMessageReport.cs" />
+    <Compile Include="v2\Model\WebhookReports\UnsubscribeReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
