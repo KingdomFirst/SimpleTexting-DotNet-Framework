@@ -95,7 +95,7 @@ namespace SimpleTextingDotNet.v2
                 var exception = new ApplicationException( message, response.ErrorException );
                 throw exception;
             }
-            else if ( response.StatusCode == HttpStatusCode.Conflict )
+            else if ( response.StatusCode != HttpStatusCode.OK )
             {
                 var errorResponse = JsonConvert.DeserializeObject<ErrorConflictResponse>( response.Content );
                 var message = string.Format( "Error Code \"{0}\". {1}\nDetails: {2}", errorResponse.Code, errorResponse.Message, errorResponse.Details );

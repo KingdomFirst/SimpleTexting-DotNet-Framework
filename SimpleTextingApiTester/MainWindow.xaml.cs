@@ -112,6 +112,36 @@ namespace SimpleTextingApiTester
 
         }
 
+        private void GetMediaItem_Click( object sender, RoutedEventArgs e )
+        {
+            try
+            {
+                Client api = GetApiClient();
+                var response = api.GetMediaItem( tbMediaId.Text.Trim() );
+                DisplayMessageInfo( response );
+            }
+            catch ( Exception ex )
+            {
+                DisplayException( ex );
+            }
+
+        }
+
+        private void GetMediaItems_Click( object sender, RoutedEventArgs e )
+        {
+            try
+            {
+                Client api = GetApiClient();
+                var response = api.GetMediaItems();
+                DisplayMessageInfo( response );
+            }
+            catch ( Exception ex )
+            {
+                DisplayException( ex );
+            }
+
+        }
+
         /// <summary>
         /// Handles the Click event of the Send Message button.
         /// </summary>
@@ -243,6 +273,27 @@ namespace SimpleTextingApiTester
                     hasData = true;
                 }
             }
+            else if ( responseType == typeof( MediaItem ) )
+            {
+                var mediaItem = ( MediaItem ) response;
+                if ( mediaItem != null )
+                {
+                    tbResponse.Text = JsonConvert.SerializeObject( mediaItem, Formatting.Indented );
+                    tbResponse.Foreground = Brushes.Green;
+                    hasData = true;
+                }
+            }
+            else if ( responseType == typeof( MediaItemsResponse ) )
+            {
+                var mediaItems = ( MediaItemsResponse ) response;
+                if ( mediaItems != null )
+                {
+                    tbResponse.Text = JsonConvert.SerializeObject( mediaItems, Formatting.Indented );
+                    tbResponse.Foreground = Brushes.Green;
+                    hasData = true;
+                }
+            }
+
             if ( !hasData )
             {
                 tbResponse.Text = "Please check your API Key";
