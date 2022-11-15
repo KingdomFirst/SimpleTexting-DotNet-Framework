@@ -87,7 +87,8 @@ namespace SimpleTextingDotNet.v2
                 {
                     var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>( response.Content );
                     message = string.Format( "Error Code \"{0}\". {1}", errorResponse.Code, errorResponse.Message );
-                } catch
+                }
+                catch
                 {
                     var errorResponse = JsonConvert.DeserializeObject<ErrorConflictResponse>( response.Content );
                     message = string.Format( "Error Code \"{0}\". {1}\nDetails: {2}", errorResponse.Code, errorResponse.Message, errorResponse.Details );
@@ -95,7 +96,12 @@ namespace SimpleTextingDotNet.v2
                 var exception = new ApplicationException( message, response.ErrorException );
                 throw exception;
             }
-            else if ( response.StatusCode != HttpStatusCode.OK )
+            else if ( response.StatusCode == HttpStatusCode.NotFound
+                      || response.StatusCode == HttpStatusCode.Conflict
+                      || response.StatusCode == HttpStatusCode.BadRequest
+                      || response.StatusCode == HttpStatusCode.Unauthorized
+                      || response.StatusCode == HttpStatusCode.Forbidden
+                      || response.StatusCode == HttpStatusCode.InternalServerError )
             {
                 var errorResponse = JsonConvert.DeserializeObject<ErrorConflictResponse>( response.Content );
                 var message = string.Format( "Error Code \"{0}\". {1}\nDetails: {2}", errorResponse.Code, errorResponse.Message, errorResponse.Details );
