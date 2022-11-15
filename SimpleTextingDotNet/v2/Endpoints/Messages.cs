@@ -66,7 +66,8 @@ namespace SimpleTextingDotNet.v2
         }
 
         /// <summary>
-        /// Evaluate a message. https://api-doc.simpletexting.com/#operation/evaluateMessage
+        /// Evaluate the body of your message before sending it to a contact or contacts. https://api-doc.simpletexting.com/#operation/evaluateMessage
+        /// We evaluate a message to determine a number of properties. These include the number of credits it will use, whether it is an extended SMS or a regular SMS and any potential errors that may occur.
         /// </summary>
         /// <param name="text">The text body of the message</param>
         /// <param name="mode">The mode of the message that determines how it will be presented. Default: Auto</param>

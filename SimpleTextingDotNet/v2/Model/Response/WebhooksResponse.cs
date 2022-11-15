@@ -28,12 +28,12 @@ using System.Collections.Generic;
 namespace SimpleTextingDotNet.v2.Model.Response
 {
     /// <summary>
-    /// The api response retrieving multiple media items.
+    /// The api response retrieving multiple webhooks.
     /// </summary>
     public class WebhooksResponse
     {
         /// <summary>
-        /// Gets or sets a list of Media Items
+        /// Gets or sets a list of webhooks
         /// </summary>
         public List<Webhook> Content { get; set; }
 

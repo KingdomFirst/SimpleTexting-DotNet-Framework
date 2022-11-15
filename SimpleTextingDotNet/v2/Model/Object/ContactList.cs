@@ -43,12 +43,12 @@ namespace SimpleTextingDotNet.v2.Model.Object
         public string Name { get; set; }
 
         /// <summary>
-        /// When the media was created. The time is in ISO 8601 format.
+        /// When the media was created.
         /// </summary>
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// When the media was created. The time is in ISO 8601 format.
+        /// When the media was created.
         /// </summary>
         public DateTime Updated { get; set; }
 

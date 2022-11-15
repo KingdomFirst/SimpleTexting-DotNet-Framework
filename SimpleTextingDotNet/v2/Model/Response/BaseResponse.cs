@@ -25,7 +25,7 @@
 namespace SimpleTextingDotNet.v2.Model.Response
 {
     /// <summary>
-    /// The api response after creating or updating a contact.
+    /// The api response after creating or updating a base object.
     /// </summary>
     public class BaseResponse
     {

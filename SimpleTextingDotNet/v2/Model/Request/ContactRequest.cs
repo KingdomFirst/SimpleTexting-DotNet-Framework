@@ -74,6 +74,7 @@ namespace SimpleTextingDotNet.v2.Model.Request
         /// <summary>
         /// Object that contains custom field values, where you should use a Name or a Merge tag in a property name and a field value as a property value.
         /// </summary>
+        [JsonProperty( PropertyName = "customFields" )]
         public dynamic CustomFields { get; set; }
 
         /// <summary>
@@ -86,6 +87,7 @@ namespace SimpleTextingDotNet.v2.Model.Request
         /// <summary>
         /// All the lists (List IDs or names) to add the contact to or replace.
         /// </summary>
+        [JsonProperty( PropertyName = "listIds" )]
         public List<string> ListIds { get; set; }
 
     }

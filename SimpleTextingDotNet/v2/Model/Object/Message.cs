@@ -75,7 +75,7 @@ namespace SimpleTextingDotNet.v2.Model.Object
         public DirectionType DirectionType { get; set; }
 
         /// <summary>
-        /// Gets or sets the html_body.
+        /// Time of sending.
         /// </summary>
         public DateTime Timestamp { get; set; }
 
@@ -90,7 +90,7 @@ namespace SimpleTextingDotNet.v2.Model.Object
         public Category Category { get; set; }
 
         /// <summary>
-        /// Gets or sets the List of MMS media descriptors: ID in hexadecimal format for st-stored file.
+        /// Gets or sets the List of MMS media descriptors: ID in hexadecimal format for stored file.
         /// </summary>
         public List<string> MediaItems { get; set; }
     }

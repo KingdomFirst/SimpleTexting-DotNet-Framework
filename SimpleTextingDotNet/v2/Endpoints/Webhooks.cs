@@ -108,9 +108,9 @@ namespace SimpleTextingDotNet.v2
         }
 
         /// <summary>
-        /// Remove media that you have previously uploaded to SimpleTexting.
+        /// Delete an existing Webhook by its unique ID.
         /// </summary>
-        /// <param name="mediaItemId">Media Item ID in hexadecimal format</param>
+        /// <param name="webhookId">Webhook ID in hexadecimal format</param>
         /// <returns></returns>
         public bool DeleteWebhook( string webhookId )
         {

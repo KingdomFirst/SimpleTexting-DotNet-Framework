@@ -1,9 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 // <copyright>
 // MIT License
 // 
@@ -28,6 +22,11 @@ using System.Threading.Tasks;
 // SOFTWARE.
 // </copyright>
 
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 namespace SimpleTextingDotNet.v2.Model.Object
 {
     /// <summary>

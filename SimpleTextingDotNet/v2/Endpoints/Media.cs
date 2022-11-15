@@ -72,7 +72,7 @@ namespace SimpleTextingDotNet.v2
         /// <summary>
         /// Gets the Media Item. https://api-doc.simpletexting.com/#operation/getMediaItem
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="id">The identifier in hexadecimal format.</param>
         /// <returns></returns>
         public MediaItem GetMediaItem( string id )
         {
@@ -87,7 +87,7 @@ namespace SimpleTextingDotNet.v2
         /// </summary>
         /// <param name="page">An ordinal number of the page to return with the results of a request (with the media items of the given number). Please note that page numbering starts at zero (0)</param>
         /// <param name="size">The number of the returned media items to show per page</param>
-        /// <returns>MessageResponse</returns>
+        /// <returns>MediaItemsResponse</returns>
         public MediaItemsResponse GetMediaItems( int? page = null, int? size = null )
         {
             var request = new RestRequest( "mediaitems" );

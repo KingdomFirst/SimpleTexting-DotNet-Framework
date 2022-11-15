@@ -67,7 +67,7 @@ namespace SimpleTextingDotNet.v2.Model.Object
         public DateTime Birthday { get; set; }
 
         /// <summary>
-        /// Array of objects (Contact list) All the lists where the contact is stored
+        /// List of all Contact Lists where the contact is stored
         /// </summary>
         public List<ContactListSimple> Lists { get; set; }
 
@@ -87,12 +87,12 @@ namespace SimpleTextingDotNet.v2.Model.Object
         public SubscriptionStatus SubscriptionStatus { get; set; }
 
         /// <summary>
-        /// When the contact was created. The time is in ISO 8601 format.
+        /// When the contact was created. 
         /// </summary>
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// When the contact was updated. The time is in ISO 8601 format.
+        /// When the contact was updated.
         /// </summary>
         public DateTime Updated { get; set; }
 

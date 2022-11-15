@@ -46,7 +46,7 @@ namespace SimpleTextingDotNet.v2
         /// <param name="customFields">Object that contains custom field values, where you should use a Name or a Merge tag in a property name and a field value as a property value.</param>
         /// <param name="upsert">If a contact already exists with the phone number in your request body, the contact will be updated with the information in the request when upsert is set to true.</param>
         /// <param name="listsReplacement">If listsReplacement is set to true, a contact will be removed from their existing list. If set to false, a contact will be added to a new list and stay in their original list.</param>
-        /// <returns>ContactResponse</returns>
+        /// <returns>BaseResponse</returns>
         public BaseResponse CreateContact( string contactPhone, string firstName = null, string lastName = null, string email = null, DateTime? birthday = null, string comment = null, List<string> lists = null, dynamic customFields = null, bool upsert = true, bool listsReplacement = true )
         {
             var request = new RestRequest( $"contacts?upsert={upsert}&listsReplacement={listsReplacement}", Method.POST );
@@ -81,7 +81,7 @@ namespace SimpleTextingDotNet.v2
         /// <param name="customFields">Object that contains custom field values, where you should use a Name or a Merge tag in a property name and a field value as a property value.</param>
         /// <param name="upsert">If a contact already exists with the phone number in your request body, the contact will be updated with the information in the request when upsert is set to true.</param>
         /// <param name="listsReplacement">If listsReplacement is set to true, a contact will be removed from their existing list. If set to false, a contact will be added to a new list and stay in their original list.</param>
-        /// <returns>ContactResponse</returns>
+        /// <returns>BaseResponse</returns>
         public BaseResponse UpdateContact( string idOrNumber, string contactPhone, string firstName = null, string lastName = null, string email = null, DateTime? birthday = null, string comment = null, List<string> lists = null, dynamic customFields = null, bool upsert = true, bool listsReplacement = true )
         {
             var request = new RestRequest( $"contacts/{idOrNumber}?upsert={upsert}&listsReplacement={listsReplacement}", Method.PUT );

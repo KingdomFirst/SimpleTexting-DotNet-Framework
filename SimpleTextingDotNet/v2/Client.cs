@@ -107,7 +107,6 @@ namespace SimpleTextingDotNet.v2
                 var message = string.Format( "Error Code \"{0}\". {1}\nDetails: {2}", errorResponse.Code, errorResponse.Message, errorResponse.Details );
                 var exception = new ApplicationException( message, response.ErrorException );
                 throw exception;
-
             }
             return response.Data;
         }
@@ -124,15 +123,6 @@ namespace SimpleTextingDotNet.v2
             request.AddParameter( "application/json", jsonBody, ParameterType.RequestBody );
             return request;
         }
-
-        public static DateTime UnixTimeStampToDateTime( double unixTimeStamp )
-        {
-            // Unix timestamp is seconds past epoch
-            DateTime dateTime = new DateTime( 1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc );
-            dateTime = dateTime.AddSeconds( unixTimeStamp ).ToLocalTime();
-            return dateTime;
-        }
-
         #endregion
     }
 }
