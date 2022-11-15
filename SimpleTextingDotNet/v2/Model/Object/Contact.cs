@@ -62,9 +62,9 @@ namespace SimpleTextingDotNet.v2.Model.Object
         public string Email { get; set; }
 
         /// <summary>
-        /// Contact's birthday in format (yyyy-mm-dd)
+        /// Contact's birthday
         /// </summary>
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
 
         /// <summary>
         /// List of all Contact Lists where the contact is stored
