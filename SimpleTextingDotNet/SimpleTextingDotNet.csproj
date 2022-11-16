@@ -64,7 +64,6 @@
     <Compile Include="v2\Model\Request\MediaRequest.cs" />
     <Compile Include="v2\Model\Object\ErrorData.cs" />
     <Compile Include="v2\Model\Object\Message.cs" />
-    <Compile Include="v2\Model\Request\MessageRequest.cs" />
     <Compile Include="v2\Model\Request\SendMessageRequest.cs" />
     <Compile Include="v2\Model\Response\ErrorConflictResponse.cs" />
     <Compile Include="v2\Model\Response\ErrorResponse.cs" />

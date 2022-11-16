@@ -25,12 +25,12 @@ namespace SimpleTextingApiTester
         public MainWindow()
         {
             InitializeComponent();
-            var expansions = new List<string>();
-            foreach ( var expansion in Enum.GetNames( typeof( Mode ) ) )
+            var modes = new List<string>();
+            foreach ( var mode in Enum.GetNames( typeof( Mode ) ) )
             {
-                expansions.Add( expansion );
+                modes.Add( mode );
             }
-            lbMode.ItemsSource = expansions;
+            lbMode.ItemsSource = modes;
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace SimpleTextingApiTester
                 Mode selectedMode = Mode.AUTO;
                 if ( lbMode.SelectedItem != null )
                 {
-                    selectedMode = ( Mode ) lbMode.SelectedItem;
+                    selectedMode = ( Mode ) Enum.Parse( typeof( Mode ), lbMode.SelectedItem.ToString() );
                 }
                 var response = api.SendMessage(
                     tbContactPhone.Text.Trim(),

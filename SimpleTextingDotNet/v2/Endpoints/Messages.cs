@@ -43,10 +43,10 @@ namespace SimpleTextingDotNet.v2
         /// <param name="mode">The mode of the message that determines how it will be presented. Default: Auto</param>
         /// <param name="accountPhone">The account phone to send from. If this field is left blank, the primary account number will be used as a default</param>
         /// <param name="subject">The subject of the MMS message</param>
-        /// <param name="fallbackText">The HTML body of the e-mail</param>
+        /// <param name="fallbackText">The HTML body of the e-mail. Default: "[url=%%fallback_link%%]"</param>
         /// <param name="mediaItems">List of MMS media URLs for temporal storing or media items IDs to send with the MMS</param>
         /// <returns>SendResponse</returns>
-        public SendResponse SendMessage( string contactPhone, string text, Mode mode = Mode.AUTO, string accountPhone = null, string subject = null, string fallbackText = null, List<string> mediaItems = null )
+        public SendResponse SendMessage( string contactPhone, string text, Mode mode = Mode.AUTO, string accountPhone = null, string subject = null, string fallbackText = "[url=%%fallback_link%%]", List<string> mediaItems = null )
         {
             var request = new RestRequest( "messages", Method.POST );
 
