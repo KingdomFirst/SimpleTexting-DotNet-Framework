@@ -26,6 +26,7 @@ using SimpleTextingDotNet.v2.Model.Object;
 using SimpleTextingDotNet.v2.Model.Request;
 using SimpleTextingDotNet.v2.Model.Response;
 using RestSharp;
+using System;
 
 namespace SimpleTextingDotNet.v2
 {
@@ -35,18 +36,16 @@ namespace SimpleTextingDotNet.v2
         /// Upload a media file from a local file to SimpleTexting.
         /// </summary>
         /// <param name="file">The media file you want to upload</param>
+        /// <param name="contentType">The mime type of the media file you are uploading. Default: image/jpeg</param>
         /// <param name="shared">Define whether a media file is shared with teammates</param>
         /// <returns>MediaItem</returns>
-        public MediaItem Upload( string file, bool shared = true )
+        public MediaItem Upload( string file, string contentType = "image/jpeg", bool shared = true )
         {
             var request = new RestRequest( $"mediaitems/upload?shared={shared}", Method.POST );
 
-            var reqBody = new MediaRequest
-            {
-                File = file
-            };
-
-            AddRequestJsonBody( request, reqBody );
+            var filename = Guid.NewGuid();
+            byte[] fileBytes = Convert.FromBase64String( file );
+            request.AddFile( "file", fileBytes, filename.ToString(), contentType );
             return Execute<MediaItem>( request );
         }
 

@@ -207,6 +207,46 @@ namespace SimpleTextingApiTester
         }
 
         /// <summary>
+        /// Handles the Click event of the Upload Binary button.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void UploadBinary_Click( object sender, RoutedEventArgs e )
+        {
+            try
+            {
+                Client api = GetApiClient();
+
+                var response = api.Upload( tbMediaFile.Text.Trim(), tbMediaType.Text.Trim() );
+                DisplayMessageInfo( response );
+            }
+            catch ( Exception ex )
+            {
+                DisplayException( ex );
+            }
+        }
+
+        /// <summary>
+        /// Handles the Click event of the Upload via URL button.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        private void UploadUrl_Click( object sender, RoutedEventArgs e )
+        {
+            try
+            {
+                Client api = GetApiClient();
+
+                var response = api.UploadWithLink( tbMediaUrl.Text.Trim() );
+                DisplayMessageInfo( response );
+            }
+            catch ( Exception ex )
+            {
+                DisplayException( ex );
+            }
+        }
+
+        /// <summary>
         /// Displays the Message information.
         /// </summary>
         private void DisplayMessageInfo( Object response )
