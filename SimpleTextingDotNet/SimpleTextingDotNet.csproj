@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7A1F3E9-36FD-4DCB-A80A-74A51044B210}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleTextingDotNet</RootNamespace>
+    <AssemblyName>SimpleTextingDotNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="v2\Client.cs" />
+    <Compile Include="v2\Endpoints\Contacts.cs" />
+    <Compile Include="v2\Endpoints\Webhooks.cs" />
+    <Compile Include="v2\Endpoints\Media.cs" />
+    <Compile Include="v2\Endpoints\Messages.cs" />
+    <Compile Include="v2\Model\Object\ContactListSimple.cs" />
+    <Compile Include="v2\Model\Object\ContactList.cs" />
+    <Compile Include="v2\Model\Object\Webhook.cs" />
+    <Compile Include="v2\Model\Object\MediaItem.cs" />
+    <Compile Include="v2\Model\Object\Contact.cs" />
+    <Compile Include="v2\Model\Request\ContactRequest.cs" />
+    <Compile Include="v2\Model\Request\MediaRequest.cs" />
+    <Compile Include="v2\Model\Object\ErrorData.cs" />
+    <Compile Include="v2\Model\Object\Message.cs" />
+    <Compile Include="v2\Model\Request\SendMessageRequest.cs" />
+    <Compile Include="v2\Model\Response\ErrorConflictResponse.cs" />
+    <Compile Include="v2\Model\Response\ErrorResponse.cs" />
+    <Compile Include="v2\Model\Response\ContactsResponse.cs" />
+    <Compile Include="v2\Model\Response\WebhooksResponse.cs" />
+    <Compile Include="v2\Model\Response\MediaItemsResponse.cs" />
+    <Compile Include="v2\Model\Response\BaseResponse.cs" />
+    <Compile Include="v2\Model\Response\MessagesResponse.cs" />
+    <Compile Include="v2\Model\Response\EvaluateResponse.cs" />
+    <Compile Include="v2\Model\Response\SendResponse.cs" />
+    <Compile Include="v2\Model\WebhookReports\UnsubscribeContact.cs" />
+    <Compile Include="v2\Model\WebhookReports\DeliveryMessage.cs" />
+    <Compile Include="v2\Model\WebhookReports\MessageReport.cs" />
+    <Compile Include="v2\Model\WebhookReports\DeliveryMessageReport.cs" />
+    <Compile Include="v2\Model\WebhookReports\UnsubscribeReport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
