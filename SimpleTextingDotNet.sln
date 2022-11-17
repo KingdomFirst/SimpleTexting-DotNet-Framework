@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{A4C4442E-2388-4B00-B58B-6F9B87F5FBB6}") = "SimpleTextingDotNet", "SimpleTextingDotNet\SimpleTextingDotNet.csproj", "{F7A1F3E9-36FD-4DCB-A80A-74A51044B210}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTextingDotNet", "SimpleTextingDotNet\SimpleTextingDotNet.csproj", "{F7A1F3E9-36FD-4DCB-A80A-74A51044B210}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {93914F70-25AE-49C5-83D9-E3342A80932B}
+		SolutionGuid = {E1E51DDE-2F11-44FF-97A0-91B4352ED5DB}
 	EndGlobalSection
 EndGlobal
